@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>FinFraudDetX</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <p class="eyebrow">FinFraudDetX</p>
+      <h1>Is this a scam?</h1>
+      <p class="lede">Paste a message, email, offer or link description. You get one of two answers: scam, or not scam.</p>
+    </header>
+
+    <form id="check-form" novalidate autocomplete="off">
+      <label for="text" class="field-label">Content to check</label>
+      <textarea id="text" name="text" rows="9" maxlength="8000" spellcheck="false"
+        placeholder="e.g. Your account is blocked. Send your OTP within 24 hours to restore access."></textarea>
+
+      <div class="row">
+        <span id="count" class="count" aria-live="off">0 / 8000</span>
+        <div class="actions">
+          <button type="button" id="clear" class="btn btn-ghost">Clear</button>
+          <button type="submit" id="submit" class="btn btn-primary">Check</button>
+        </div>
+      </div>
+    </form>
+
+    <section id="result" class="result" hidden aria-live="polite" role="status">
+      <p id="verdict" class="verdict"></p>
+      <p id="detail" class="detail"></p>
+    </section>
+
+    <footer class="note">
+      <p>This is an automated assessment, not proof. Never share OTPs, PINs, passwords or card details with anyone who contacts you first.</p>
+      <p>Text you submit is sent to the server for analysis and is not stored by this page.</p>
+    </footer>
+  </main>
+</body>
+</html>
